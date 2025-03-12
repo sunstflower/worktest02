@@ -1,1 +1,81 @@
 @import "tailwindcss";
+@import 'reactflow/dist/style.css';
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #1a202c;
+  color: #fff;
+}
+
+.react-flow__node {
+  border-radius: 8px;
+  border: 1px solid #4a5568;
+  background-color: #2d3748;
+  color: white;
+}
+
+.react-flow__controls {
+  background: #1a202c;
+  border-radius: 8px;
+  border: 1px solid #2d3748;
+}
+
+.react-flow__controls button {
+  background: #2d3748;
+  border-bottom: 1px solid #4a5568;
+  color: #fff;
+}
+
+.react-flow__controls button:hover {
+  background: #4a5568;
+}
+
+.react-flow__minimap {
+  background-color: #1a202c;
+  border-radius: 8px;
+}
+
+#root {
+    height: 100vh;
+  }
+
+.react-flow__controls {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .react-flow__controls button {
+    background: #2d3748;
+    border: 1px solid #4a5568;
+    color: #fff;
+    border-radius: 4px;
+    margin: 1px 0;
+  }
+  
+  .react-flow__controls button:hover {
+    background: #4a5568;
+  }
+  
+  .react-flow__minimap {
+    background-color: #1a202c;
+    border-radius: 8px;
+  }
+  
+  .react-flow__minimap-mask {
+    fill: rgba(74, 85, 104, 0.3);
+  }
+  
+  .react-flow__minimap-node {
+    fill: #4a5568;
+    stroke: none;
+  }
+  
+  .react-flow .react-flow__panel {
+    transition: all 0.2s ease;
+  }
+  
+  .react-flow .react-flow__panel:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }

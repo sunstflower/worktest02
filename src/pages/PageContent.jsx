@@ -1,17 +1,19 @@
 import { useParams } from 'react-router-dom';
+import CanvasContent from './CanvasContent/canvas';
 
 const PageContent = () => {
-    const { id } = useParams();
-    
-    return (
-      <div className="p-4">
-        <h1 className="text-2xl font-bold mb-4">Page {id}</h1>
-        <div className="bg-white p-4 rounded-lg shadow">
-          {/* 页面内容 */}
-          <p>This is page {id} content</p>
-        </div>
-      </div>
-    );
-  };
+  const { id } = useParams();
   
-  export default PageContent;
+  return (
+    <div className="flex flex-col h-screen bg-gray-900 p-4 pb-6">
+      {/* <header className="bg-gray-800 p-4 border-b border-gray-700">
+        <h1 className="text-xl text-white font-bold">画布 {id}</h1>
+      </header> */}
+      <div className="flex-1 relative p-2 pb-3">
+          <CanvasContent pageId={id} />
+      </div>
+    </div>
+  );
+};
+
+export default PageContent;

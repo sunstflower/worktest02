@@ -1,8 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
 import pageReducer from './pageSlice';
+import canvasReducer from './canvasSlice';
 
 export const store = configureStore({
   reducer: {
-    pages: pageReducer
+    pages: pageReducer,
+    canvas: canvasReducer,
   }
 });
