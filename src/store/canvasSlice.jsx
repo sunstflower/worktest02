@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  canvasData: {}  // 使用对象存储不同页面的画布数据
+  canvasData: {
+  }
 };
 
 const canvasSlice = createSlice({
@@ -10,19 +11,24 @@ const canvasSlice = createSlice({
   reducers: {
     setNodesAndEdges: (state, action) => {
       const { pageId, nodes, edges } = action.payload;
+      // 确保页面存在，如果不存在就初始化
       state.canvasData[pageId] = { nodes, edges };
     },
     updateNodes: (state, action) => {
       const { pageId, nodes } = action.payload;
-      if (state.canvasData[pageId]) {
-        state.canvasData[pageId].nodes = nodes;
+      // 确保页面存在，如果不存在就初始化
+      if (!state.canvasData[pageId]) {
+        state.canvasData[pageId] = { nodes: [], edges: [] };
       }
+      state.canvasData[pageId].nodes = nodes;
     },
     updateEdges: (state, action) => {
       const { pageId, edges } = action.payload;
-      if (state.canvasData[pageId]) {
-        state.canvasData[pageId].edges = edges;
+      // 确保页面存在，如果不存在就初始化
+      if (!state.canvasData[pageId]) {
+        state.canvasData[pageId] = { nodes: [], edges: [] };
       }
+      state.canvasData[pageId].edges = edges;
     }
   }
 });

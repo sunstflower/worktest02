@@ -9,7 +9,7 @@ const PageContent = () => {
       {/* <header className="bg-gray-800 p-4 border-b border-gray-700">
         <h1 className="text-xl text-white font-bold">画布 {id}</h1>
       </header> */}
-      <div className="flex-1 relative p-2 pb-3">
+      <div className="flex-1 relative p-2 pb-">
           <CanvasContent pageId={id} />
       </div>
     </div>
